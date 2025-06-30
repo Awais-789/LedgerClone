@@ -15,6 +15,7 @@ import "./index.css"
 function App() {
   return (
     <Provider store={store}>
+      {/* Hi */}
       <Router>
         <div className="App min-h-screen bg-white">
           <Header />
