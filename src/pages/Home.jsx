@@ -21,10 +21,6 @@ const Home = () => {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-
-    setTimeout(() => {
-      window.location.href = "/desktop-app";
-    }, 2000);
   };
 
   const faqData = [
